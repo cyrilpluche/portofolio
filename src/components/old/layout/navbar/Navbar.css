@@ -1,0 +1,8 @@
+.tab {
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.tab:hover {
+    border-bottom: 3px solid #282828;
+}

@@ -1,0 +1,32 @@
+.background {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  z-index: -1;
+  position: fixed;
+  transition: transform 2s ease 1s;
+}
+
+.top-bg {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.bot-bg {
+  height: 100%;
+  width: 100%;
+  background-color: #161616;
+  }
+
+.top-active {
+  transform: translateY(0%);
+}
+
+.bot-active {
+  transform: translateY(-100%);
+}
+
+.top-active-quarter {
+  transform: translateY(-20%);
+}

@@ -1,0 +1,89 @@
+.container {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 100px rgb(255, 255, 255);
+}
+
+.cover {
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f1;
+    background-size: cover;
+    background-position: 0% 70%;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+     /* transition out */
+    transition-property: opacity, transform;
+    transition-duration: 1s, 5s, 3s;
+    transition-timing-function: ease;
+}
+
+.cover:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    /* transition in */
+    transition-property: opacity, transform;
+    transition-duration: 1s, 10s;
+    transition-timing-function: ease;
+}
+
+.active > .cover {
+    opacity: 0;
+    /* transition in */
+    transition-property: opacity, transform;
+    transition-duration: 1s, 10s;
+    transition-timing-function: ease;
+}
+
+.active > .content {
+    opacity: 1;
+    /* transition in */
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.active .title {
+    color: transparent;
+    /* transition in */
+    transition-property: color;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.inner-container {
+    height: 100%;
+}
+
+.content {
+    z-index: 1;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    /* transition out */
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.title {
+    font-size: 20px !important;
+    font-weight: bold;
+    z-index: 3;
+    position: relative;
+    /* transition out */
+    transition-property: color;
+    transition-duration: 3s;
+    transition-timing-function: ease;
+}
+
+.company-icon {
+    width: 20%;
+    height: auto;
+}

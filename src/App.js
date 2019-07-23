@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import 'typeface-roboto';
+import './App.scss';
+import './Spacing.scss';
+import Portofolio from './components/Portofolio'
+import {Background} from "./components/background/Background"
+import {Navbar} from "./components/navbar/Navbar";
+import {DesignName} from "./components/home/DesignName";
+import { createBrowserHistory } from "history";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [page, setPage] = useState("home")
+    const [opacityTransition, setOpacityTransition] = useState(true)
+    const history = createBrowserHistory()
+    const pages = ["contact", "portofolio", "home"]
+
+    history.listen( location =>  {
+        console.log(opacityTransition)
+        setOpacityTransition(true)
+        setTimeout(() => {
+            setOpacityTransition(false)
+            console.log(opacityTransition)
+        }, 2000)
+    });
+
+    return (
+        <div className="index">
+            <Background page={page} />
+            <Navbar history={history} pages={pages} page={page} navigate={setPage}/>
+            <DesignName label={"cyril pluche"} isEnter={page === "home"}/>
+            <Portofolio hidden={page !== "portofolio"} />
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,33 @@
+.design-label-container {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.design-label {
+  text-transform: uppercase;
+  font-size: 70px;
+  color: rgb(255, 218, 28);
+  letter-spacing: 0;
+  opacity: 0;
+  transition: letter-spacing 3s ease, opacity 1.5s ease;
+}
+
+.letter-spacing {
+  letter-spacing: 15px;
+  opacity: 0.4;
+  transition: letter-spacing 3s ease, opacity 3s ease 1s, color 3s ease 1s, text-shadow 1.5s ease;
+}
+
+.letter-spacing:hover {
+  opacity: 1;
+  color: white;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  transition: opacity 1.5s ease, color 1.5s ease, text-shadow 1.5s ease;
+}
