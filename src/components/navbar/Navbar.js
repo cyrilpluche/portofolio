@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import "./Navbar.scss"
 
-function Link(props) {
-    const {label} = props
-    const {active} = props
+export const Link = ({label, active}) => {
 
     const capitalize = text => (text.substring(0, 1).toUpperCase() + text.substring(1, text.length).toLowerCase())
 
@@ -20,27 +18,22 @@ Link.propTypes = {
     active: PropTypes.bool,
 };
 
-export function Navbar({navigate, pages, page, history}) {
+export const Navbar = ({navigate, links, activeLink, history}) => {
 
     function handleClick(link) {
         navigate(link)
-        history.push('/' + link)
+        history.push('/' + link.url)
     }
 
-    function getActive(link) {
-        return page === link
-    }
-
-    function getColor() {
-        if (page !== "home") return "color-black"
-        else return ""
+    const getActive = (link) => {
+        return activeLink.url === link.url
     }
 
     return (
-        <div className={["navbar-container", getColor()].join(' ')}>
-            {pages.map((p, index) => (
+        <div className={["navbar-container", activeLink.navColor].join(' ')}>
+            {links.map((p, index) => (
                 <div onClick={() => handleClick(p)} key={index}>
-                    <Link label={p} active={getActive(p)} />
+                    <Link label={p.label} active={getActive(p)} />
                 </div>
             ))}
         </div>
@@ -49,7 +42,7 @@ export function Navbar({navigate, pages, page, history}) {
 
 Navbar.propTypes = {
     navigate: PropTypes.func.isRequired,
-    page: PropTypes.string,
-    pages: PropTypes.array,
+    links: PropTypes.array,
+    activeLink: PropTypes.object,
     history: PropTypes.object.isRequired,
 };

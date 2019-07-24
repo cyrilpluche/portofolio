@@ -1,11 +1,3 @@
-import coverBali from '../public/cover_bali.jpg'
-import coverIonic from '../public/cover_ionic.png'
-import iconFitnet from '../public/icon_fitnet.png'
-import iconAngular from '../public/icon_angular.png'
-import iconIonic from '../public/icon_ionic.png'
-import iconJava from '../public/icon_java.png'
-import iconNode from '../public/icon_node.png'
-
 const fitnet = {
     menuTitle: 'Cross-platform application Android & iOS',
     title: 'Fitnet Manager smartphone application 2.0',
