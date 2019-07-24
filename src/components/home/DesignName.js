@@ -6,7 +6,10 @@ export function DesignName({label, isEnter}) {
 
     return (
         <div className="design-label-container">
-            <div className={["design-label barcode", isEnter ? "letter-spacing" : "disabled"].join(' ')}>
+            <div className={["design-label", isEnter ? "design-label-active" : "disabled"].join(' ')}>
+                Engineer in computer science & management
+            </div>
+            <div className={["design-label-glow barcode mt-3", isEnter ? "letter-spacing" : "disabled"].join(' ')}>
                 {label}
             </div>
         </div>

@@ -61,6 +61,23 @@ const prello = {
     period: "10/18 - 12/18"
 }
 
+const amazon = {
+    menuTitle: 'Amazon Alexa Skill',
+    title: 'Trametro Montpellier',
+    company: 'Polytech',
+    location: 'Montpellier, France',
+    description: 'This project was carried out in the context of our engineering school, Polytech Montpellier. Amazon Alexa, known simply as Alexa, is a virtual assistant developed by Amazon, first used in the Amazon Echo and the Amazon Echo Dot smart speakers developed by Amazon Lab126. It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news.',
+    mission: "Trametro is the skill I built which allows you to ask for next tramway schedules in real-time. After programming Alexa client side to handle user vocal sentences, I create my own server which retrieve tramway schedules and select corresponding slots. Finally, I also developed a separate smartphone interface for a personal use and to experiment React Native framework.",
+    keyWords: ['Alexa', 'Amazon', 'Vocal'],
+
+    role: 'Full-stack',
+    languages: [
+        "React Native",
+        "Node.js",
+    ],
+    period: "10/18 - 12/18"
+}
+
 const bali = {
     menuTitle: 'Project Management Tool',
     title: 'SOP Manager',
@@ -85,13 +102,14 @@ export const experiences = [
         title: 2019,
         items: [
             fitnet,
+            jigsaw,
         ]
     },
     {
         title: 2018,
         items: [
-            jigsaw,
             prello,
+            amazon,
             bali,
         ]
     }

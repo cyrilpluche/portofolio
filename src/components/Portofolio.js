@@ -7,7 +7,7 @@ import {experiences} from '../data/Portofolio'
 function Portofolio({hidden}) {
 
     const [items] = useState(experiences)
-    const [selectedItem, setSelectedItem] = useState(null)
+    const [selectedItem, setSelectedItem] = useState(experiences[0].items[0])
 
     return (
         <div className={["portofolio-container web", hidden ? "hide-content" : "show-content"].join(" ")}>
