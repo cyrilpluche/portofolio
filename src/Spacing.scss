@@ -26,7 +26,10 @@ $space: 10px;
   padding-top: $space;
   padding-bottom: $space;
 }
-
+.px-2 {
+  padding-right: $space * 12;
+  padding-left: $space * 12;
+}
 .pb-1 {
   padding-bottom: $space;
 }
