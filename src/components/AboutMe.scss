@@ -38,13 +38,32 @@
 
 .timeline-content-container {
   width: 90%;
+  height: 50%;
+  position: relative;
 }
 
-.step-1 {transform: translateX(25%);}
-.step-2 {transform: translateX(50%);}
-.step-3 {transform: translateX(75%);}
+.timeline-cover {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.step-1 {
+  transform: translateX(25%);
+}
+
+.step-2 {
+  transform: translateX(51%);
+}
+
+.step-3 {
+  transform: translateX(76%);
+}
 
 .timeline-section {
+  position: relative;
   width: 23%;
   opacity: 0.3;
   transition: opacity 1s ease
@@ -57,4 +76,97 @@
 .timeline-detail {
   border-left: 2px solid #bcbcbc;
   padding-left: 15px;
+}
+
+.aboutme-description {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.aboutme-skills {
+  height: 100%;
+  width: 45%;
+
+}
+
+.aboutme-hobbies {
+  height: 100%;
+  width: 45%;
+
+}
+
+.aboutme-skills-container {
+  position: relative;
+  height: 60%;
+  width: 90%;
+}
+
+.level-bar-container {
+  height: 10px;
+  background-color: #f3f3f3;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  margin-bottom: 10px;
+}
+
+.level-bar {
+  height: 10px;
+  position: absolute;
+  background-color: #919191;
+  z-index: 6;
+  width: 0;
+  transition: width 2s ease
+}
+
+.lvl-9 {
+  width: 90%;
+}
+
+.lvl-8 {
+  width: 80%;
+}
+
+.lvl-7 {
+  width: 70%;
+}
+
+.lvl-6 {
+  width: 60%;
+}
+
+.lvl-0 {
+  width: 0;
+}
+
+.drawer {
+  position: absolute;
+  width: 200%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateX(0%);
+  transition: transform 1.5s ease-in-out;
+}
+
+.drawer-icon {
+  transform: rotate(0deg);
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  transition: transform 1.5s ease-in-out;
+}
+
+.open-drawer {
+  transform: translateX(-50%);
+}
+
+.flip-drawer-icon {
+  transform: rotate(180deg);
 }

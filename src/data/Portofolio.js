@@ -49,6 +49,7 @@ const prello = {
         "Node.js",
         "Material UI",
         "PostgreSQL",
+        "Redux"
     ],
     period: "10/18 - 12/18"
 }
