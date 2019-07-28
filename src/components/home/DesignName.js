@@ -2,14 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import "./DesignName.scss"
 
-export function DesignName({label, isEnter}) {
+export function DesignName({label, active}) {
+
+    const getActiveClass = (item) => (
+        active ? (
+            item === "top-text" ? "design-label-active color-primary-contrast" : "design-glow-active"
+        ) : (
+            item === "top-text" ? "disabled color-tertiary" : "disabled"
+        )
+    )
 
     return (
-        <div className="design-label-container clickable">
-            <div className={["design-label", isEnter ? "design-label-active" : "disabled"].join(' ')}>
+        <div className="container container-col content-center clickable">
+            <div className={["container-row content-center design-label text-l", getActiveClass('top-text')].join(' ')}>
                 Engineer in computer science & management
             </div>
-            <div className={["design-label-glow barcode mt-3", isEnter ? "letter-spacing" : "disabled"].join(' ')}>
+            <div className={["container-row content-center design-label-glow color-tertiary barcode mt-3", getActiveClass()].join(' ')}>
                 {label}
             </div>
         </div>
@@ -18,5 +26,5 @@ export function DesignName({label, isEnter}) {
 
 DesignName.propTypes = {
     label: PropTypes.string,
-    isEnter: PropTypes.bool,
+    active: PropTypes.bool,
 };

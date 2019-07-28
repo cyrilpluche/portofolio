@@ -1,3 +1,5 @@
+@import "../../style/Variables";
+
 .background {
   height: 100%;
   width: 100%;
@@ -10,13 +12,13 @@
 .top-bg {
   height: 100%;
   width: 100%;
-  background-color: #ffffff;
+  background-color: $secondary;
 }
 
 .bot-bg {
   height: 100%;
   width: 100%;
-  background-color: #161616;
+  background-color: $primary;
   }
 
 .top-active {

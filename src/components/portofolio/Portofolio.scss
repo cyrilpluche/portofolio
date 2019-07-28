@@ -1,48 +1,18 @@
-.portofolio-container {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  overflow: hidden;
-}
-
-.web .menu-scroll {
-  width: 40%;
-  padding-right: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  height: 80%;
-  overflow: auto;
-}
-
-.web .menu-content {
-  width: 45%;
-  padding-right: 5%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+@import "../../style/Variables";
 
 ::-webkit-scrollbar {
   display: none;
 }
 
 // ========= MenuScroll ========
+#menu-scroll {
+  height: 100%;
+}
+
 .menu-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  color: #b4b4b4;
   padding-right: 15px;
   border-right: 2px solid white;
-  transition: border-right 1s ease, color 1s ease;
+  transition: border-right $time-1 ease, color $time-1 ease;
 }
 .menu-item-active {
   color: #161616;
@@ -50,6 +20,11 @@
 }
 
 // ========= MenuContent ========
+#menu-content {
+  height: 100%;
+  width: 90%;
+}
+
 .language {
   color: #3a3a3a;
   background-color: #ffffff;

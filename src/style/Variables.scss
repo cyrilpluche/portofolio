@@ -1,45 +1,45 @@
 $space: 10px;
+$primary: #000000;
+$primary-contrast: #FFFFFF;
+$secondary: #FFFFFF;
+$secondary-contrast: #000000;
+$tertiary: rgb(255, 218, 28);
 
-.my-1 {
-  margin-top: $space;
-  margin-bottom: $space;
+$light: #b4b4b4;
+
+$time-1: 1s;
+$time-15: 1.5s;
+$time-2: 2s;
+$time-3: 3s;
+
+.bg-primary {
+  background-color: $primary;
 }
 
-.m-0 {
-  margin: 0;
+.bg-secondary {
+  background-color: $secondary;
 }
 
-.mb-1 { margin-bottom: $space;}
-.mb-2 { margin-bottom: $space * 4;}
-.mb-3 {
-  margin-bottom: $space * 8;
+.color-primary-contrast {
+  color: $primary-contrast
 }
 
-.mr-1 { margin-right: $space;}
-.mr-2 { margin-right: $space * 4;}
-
-.mt-3 {margin-top: $space * 12;}
-
-.p-0 {padding: 0;}
-.p-1 {padding: $space;}
-.py-1 {
-  padding-top: $space;
-  padding-bottom: $space;
-}
-.px-2 {
-  padding-right: $space * 12;
-  padding-left: $space * 12;
-}
-.pb-1 {
-  padding-bottom: $space;
-}
-.pb-2 {
-  padding-bottom: $space * 4;
+.color-tertiary {
+  color: $tertiary;
 }
 
-/* ============ V2 ============ */
+.color-light {
+  color: $light;
+}
 
-.cover {
-  height: 100%;
-  width: 100%;
+.text-xxl {
+  font-size: 2.5em;
+}
+
+.text-l {
+  font-size: 1.5em;
+}
+
+.text-m {
+  font-size: 1.2em;
 }

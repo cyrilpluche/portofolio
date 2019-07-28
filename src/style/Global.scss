@@ -1,3 +1,5 @@
+@import "./Variables";
+
 html {
   height: 100%;
   width: 100%;
@@ -15,7 +17,7 @@ body {
   font-family: 'Libre Barcode 128 Text', cursive;
 }
 
-.abel {
+.uppercase {
   font-family: 'Abel', sans-serif;
   text-transform: uppercase;
 }
@@ -39,16 +41,7 @@ body {
 }
 
 // ========== CONTAINER =========
-.container-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
-.container-col {
-  display: flex;
-  flex-direction: column;
-}
 
 .justify-center {
   justify-content: center;
@@ -66,33 +59,11 @@ body {
   align-items: flex-end;
 }
 
-.hide-content {
-  opacity: 0;
-  transition: opacity 2s ease;
-  position: relative;
-  z-index: -1
-}
-
-.show-content {
-  opacity: 1;
-  transition: opacity 2s ease 2s;
-  position: relative;
-  z-index: 5;
-}
-
 // ========== TEXT =========
 .align-text-end {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-}
-
-.text-l {
-  font-size: 1.5em;
-}
-
-.text-m {
-  font-size: 1.2em;
 }
 
 .t-white {
@@ -123,6 +94,16 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
 }
 
+.bg-blue {
+  flex-grow: 1;
+  background-color: red;
+}
+
+.bg-red {
+  flex-grow: 0;
+  background-color: $primary;
+}
+
 /** ============ V2 ============ */
 
 .index {
@@ -130,12 +111,43 @@ body::-webkit-scrollbar-thumb {
   margin: 0;
   min-height: 100%;
   min-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-container {
   position: relative;
-  background-color: blue;
-  height: 100vh;
-  width: 100vw;
+  flex-grow: 1;
 }
 
+.page {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.hide-content {
+  opacity: 0;
+  transition: opacity $time-2 ease;
+  z-index: -1
+}
+
+.show-content {
+  opacity: 1;
+  transition: opacity $time-2 ease $time-2;
+  z-index: 5;
+}
+
+.scroll-hidden {
+  overflow: hidden;
+}
+
+.scroll {
+  overflow: auto;
+}

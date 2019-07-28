@@ -1,23 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {MenuScroll} from "./portofolio/MenuScroll";
-import {MenuContent} from "./portofolio/MenuContent";
+import {MenuContent, MenuDialog} from "./portofolio/MenuContent";
 import "./portofolio/Portofolio.scss"
 import {experiences} from '../data/Portofolio'
 
-function Portofolio({hidden}) {
+const Portofolio = ({isMobile}) => {
 
     const [items] = useState(experiences)
     const [selectedItem, setSelectedItem] = useState(experiences[0].items[0])
+    const [open, setOpen] = useState(false);
+
+    const handleSelectItem = item => {
+        setSelectedItem(item)
+        setOpen(true)
+    }
 
     return (
-        <div className={["portofolio-container web", hidden ? "hide-content" : "show-content"].join(" ")}>
-            <div className="menu-scroll">
-                <MenuScroll selectItem={setSelectedItem} items={items} activeItem={selectedItem}/>
+        <div className="container container-row">
+            <div className="grid-12-6">
+                <MenuScroll selectItem={handleSelectItem} items={items} activeItem={selectedItem}/>
             </div>
-            <div className="menu-content">
-                {selectedItem ? <MenuContent item={selectedItem}/> : null}
-                {}
-            </div>
+            {isMobile ? <MenuDialog open={open} setOpen={setOpen} item={selectedItem}/> : (
+                <div className="grid-12-6">
+                    <MenuContent item={selectedItem} isMobile={false}/>
+                </div>
+            )}
         </div>
     )
 }

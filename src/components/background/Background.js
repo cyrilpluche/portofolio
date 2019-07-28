@@ -2,10 +2,12 @@ import React from 'react';
 import "./Background.scss"
 import PropTypes from 'prop-types';
 
-export const Background = ({background}) => {
+export const Background = ({transition}) => {
+
+    console.log(transition)
 
     return (
-        <div className={["background", background].join(' ')}>
+        <div className={["background", transition].join(' ')}>
             <div className="top-bg"/>
             <div className="bot-bg"/>
         </div>
@@ -13,5 +15,5 @@ export const Background = ({background}) => {
 }
 
 Background.propTypes = {
-    background: PropTypes.string.isRequired,
+    transition: PropTypes.string.isRequired,
 };

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
-function Item({label, selectItem, active}) {
+const Item = ({label, selectItem, active}) => {
 
     return (
         <div
-            className={["abel clickable menu-item text-l t-grey my-1", active ? "menu-item-active" : null].join(" ")}
+            className={["container-row justify-end clickable menu-item text-l color-light my-1", active ? "menu-item-active" : null].join(" ")}
             onMouseOver={selectItem}
         >
             {label}
@@ -13,29 +13,31 @@ function Item({label, selectItem, active}) {
     )
 }
 
-function ItemTitle({label}) {
+const Title = ({label}) => {
     return (
-        <div className="abel menu-item text-m t-grey-light pb-1">{label}</div>
+        <div className="container-row justify-end uppercase menu-item text-m color-light pb-1">{label}</div>
     )
 }
 
-export function MenuScroll({items, selectItem, activeItem}) {
+export const MenuScroll = ({items, selectItem, activeItem}) => {
 
     const isActive = item => {
         return activeItem && item === activeItem
     }
 
     return (
-        <React.Fragment>
+        <div className="container container-col content-center scroll-hidden">
+            <div id="menu-scroll" className="scroll">
             {items.map((item, index) => (
-                <div className="mb-3" key={index}>
-                    <ItemTitle label={item.title}/>
+                <div className="full-width mb-3" key={index}>
+                    <Title label={item.title}/>
                     {item.items.map((itemChild, indexChild) => (
                         <Item label={itemChild.menuTitle} selectItem={() => selectItem(itemChild)} key={indexChild} active={isActive(itemChild)}/>
                     ))}
                 </div>
             ))}
-        </React.Fragment>
+            </div>
+        </div>
     );
 }
 
