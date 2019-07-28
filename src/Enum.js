@@ -1,6 +1,6 @@
 export const pages = {
     HOME: "home",
     ABOUT_ME: "aboutme",
-    PORTOFOLIO: "portofolio",
+    PORTOFOLIO: "portfolio",
     CONTACT: "contact"
 }

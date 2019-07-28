@@ -49,6 +49,7 @@ const prello = {
         "Node.js",
         "Material UI",
         "PostgreSQL",
+        "Redux"
     ],
     period: "10/18 - 12/18"
 }
@@ -75,7 +76,7 @@ const bali = {
     title: 'SOP Manager',
     company: 'University Stikom',
     location: 'Denpasar, Bali, Indonesia',
-    description: "During the year, the university carries projects named as Standard Procedurale Operations (SOP). These projects can last one day, one week or a few months and needs to be followed by a planner which affects staff members on each task, check their results and generate reports. These actions are really similar for each project so the main goal of the demand was to facilitate these planifications and save time on it",
+    description: "During the year, the university of Stikom Bali carries projects named as Standard Procedurale Operations (SOP). These projects can last one day, one week or a few months and needs to be followed by a planner which affects staff members on each task, check their results and generate reports. These actions are really similar for each project so the main goal of the demand was to facilitate these planifications and save time on it",
     mission: "In a team of 3 developers, we modeled and implemented the project monitoring by creating an internal web application. We regularly organized meetings with our client where we presented the project status.",
     keyWords: ['Web', 'Project Management', 'Conception', 'Modelisation'],
 

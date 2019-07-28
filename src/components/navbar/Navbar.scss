@@ -1,4 +1,10 @@
+@import "../../style/Variables";
+
 .navbar-container {
+  flex-grow: 0;
+}
+
+.naavbar-container {
   height: 50px;
   width: 100%;
   z-index: 100;
@@ -10,12 +16,17 @@
   align-items: center;
 
   transition: color 2s ease 2s;
-  color: white;
+  color: $primary-contrast;
 }
 
 .color-black {
   transition: color 1s ease 1s;
-  color: black;
+  color: $secondary-contrast;
+}
+
+.color-white {
+  transition: color 1s ease 1s;
+  color: $primary-contrast;
 }
 
 .link {

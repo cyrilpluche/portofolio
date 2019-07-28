@@ -5,7 +5,7 @@ function Item({label, selectItem, active}) {
 
     return (
         <div
-            className={["abel menu-item text-l t-grey my-1", active ? "menu-item-active" : null].join(" ")}
+            className={["abel clickable menu-item text-l t-grey my-1", active ? "menu-item-active" : null].join(" ")}
             onMouseOver={selectItem}
         >
             {label}
@@ -24,8 +24,6 @@ export function MenuScroll({items, selectItem, activeItem}) {
     const isActive = item => {
         return activeItem && item === activeItem
     }
-
-    console.log(activeItem)
 
     return (
         <React.Fragment>

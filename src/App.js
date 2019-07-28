@@ -18,7 +18,7 @@ function App() {
 
     const navLinks = [
         {url: pages.CONTACT, label: "Contact", background: "top-active-quarter", navColor: "color-black"},
-        {url: pages.PORTOFOLIO, label: "Portofolio", background: "top-active", navColor: "color-black"},
+        {url: pages.PORTOFOLIO, label: "Portfolio", background: "top-active", navColor: "color-black"},
         {url: pages.ABOUT_ME, label: "About Me", background: "top-active", navColor: "color-black"},
         {url: pages.HOME, label: "Home", background: "bot-active", navColor: "color-white"}
     ]

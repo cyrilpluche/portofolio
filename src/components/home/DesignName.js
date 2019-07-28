@@ -5,7 +5,7 @@ import "./DesignName.scss"
 export function DesignName({label, isEnter}) {
 
     return (
-        <div className="design-label-container">
+        <div className="design-label-container clickable">
             <div className={["design-label", isEnter ? "design-label-active" : "disabled"].join(' ')}>
                 Engineer in computer science & management
             </div>

@@ -7,7 +7,7 @@ export const Link = ({label, active}) => {
     const capitalize = text => (text.substring(0, 1).toUpperCase() + text.substring(1, text.length).toLowerCase())
 
     return (
-        <div className={["link", active ? "link-active" : null].join(' ')}>
+        <div className={["clickable link", active ? "link-active" : null].join(' ')}>
             {capitalize(label)}
         </div>
     )

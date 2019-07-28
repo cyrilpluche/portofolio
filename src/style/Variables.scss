@@ -1,0 +1,45 @@
+$space: 10px;
+
+.my-1 {
+  margin-top: $space;
+  margin-bottom: $space;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mb-1 { margin-bottom: $space;}
+.mb-2 { margin-bottom: $space * 4;}
+.mb-3 {
+  margin-bottom: $space * 8;
+}
+
+.mr-1 { margin-right: $space;}
+.mr-2 { margin-right: $space * 4;}
+
+.mt-3 {margin-top: $space * 12;}
+
+.p-0 {padding: 0;}
+.p-1 {padding: $space;}
+.py-1 {
+  padding-top: $space;
+  padding-bottom: $space;
+}
+.px-2 {
+  padding-right: $space * 12;
+  padding-left: $space * 12;
+}
+.pb-1 {
+  padding-bottom: $space;
+}
+.pb-2 {
+  padding-bottom: $space * 4;
+}
+
+/* ============ V2 ============ */
+
+.cover {
+  height: 100%;
+  width: 100%;
+}
