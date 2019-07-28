@@ -74,6 +74,8 @@ function App() {
                 <Page content={<DesignName label={"cyril pluche"} active={isPageActive(pages.HOME)}/>}
                       active={isPageActive(pages.HOME)}/>
                 <Page content={<Portofolio isMobile={isMobile}/>} active={isPageActive(pages.PORTFOLIO)}/>
+                <Page content={<AboutMe isMobile={isMobile}/>} active={isPageActive(pages.ABOUT_ME)}/>
+                <Page content={<Contact isMobile={isMobile}/>} active={isPageActive(pages.CONTACT)}/>
             </div>
             {/*<DesignName label={"cyril pluche"} isEnter={activeLink.url === pages.HOME}/>
             <Portofolio hidden={activeLink.url !== pages.PORTOFOLIO} />

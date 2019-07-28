@@ -1,3 +1,77 @@
+@import "../style/Variables";
+
+#about-me {
+  display: flex;
+  flex-direction: column;
+}
+
+#about-me-drawer {
+  position: relative;
+  flex-grow: 1;
+}
+
+.drawer {
+  position: relative;
+  z-index: 1;
+  width: 200%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transform: translateX(0%);
+  transition: transform 1.5s ease-in-out;
+}
+
+.drawer-icon {
+  transform: rotate(0deg);
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  transition: transform 1.5s ease-in-out;
+}
+
+.open-drawer {
+  transform: translateX(-42%);
+}
+
+.flip-drawer-icon {
+  transform: rotate(180deg);
+}
+
+.drawer-content {
+  width: 40%;
+}
+
+.container-timeline {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 1000px) {
+  .container-timeline {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.timeline-section {
+  position: relative;
+  width: 23%;
+  opacity: 0.3;
+  transition: opacity 1s ease
+}
+@media (max-width: 1000px) {
+  .timeline-section {
+    padding-right: $space;
+    padding-left: $space;
+    position: relative;
+    width: 100%;
+    opacity: 0.3;
+    transition: opacity 1s ease
+  }
+}
+
 .aboutme-container {
   width: 100%;
   height: 100%;
@@ -37,8 +111,7 @@
 }
 
 .timeline-content-container {
-  width: 90%;
-  height: 50%;
+  width: 100%;
   position: relative;
 }
 
@@ -62,13 +135,6 @@
   transform: translateX(76%);
 }
 
-.timeline-section {
-  position: relative;
-  width: 23%;
-  opacity: 0.3;
-  transition: opacity 1s ease
-}
-
 .timeline-section-active {
   opacity: 1;
 }
@@ -90,8 +156,7 @@
 
 .aboutme-skills {
   height: 100%;
-  width: 45%;
-
+  width: 100%;
 }
 
 .aboutme-hobbies {
@@ -102,8 +167,7 @@
 
 .aboutme-skills-container {
   position: relative;
-  height: 60%;
-  width: 90%;
+  width: 80%;
 }
 
 .level-bar-container {
@@ -142,31 +206,4 @@
 
 .lvl-0 {
   width: 0;
-}
-
-.drawer {
-  position: absolute;
-  width: 200%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  transform: translateX(0%);
-  transition: transform 1.5s ease-in-out;
-}
-
-.drawer-icon {
-  transform: rotate(0deg);
-  width: 10%;
-  display: flex;
-  justify-content: center;
-  transition: transform 1.5s ease-in-out;
-}
-
-.open-drawer {
-  transform: translateX(-50%);
-}
-
-.flip-drawer-icon {
-  transform: rotate(180deg);
 }

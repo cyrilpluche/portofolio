@@ -3,10 +3,10 @@ import "./contact/Contact.scss"
 import {contactInformations, contactIcon} from "../data/Contact";
 
 const Content = ({informations}) => (
-    <li className="container-col text-l">
-        <ul className="pb-2">{informations.description}</ul>
+    <li className="container-col text-m pr-1">
+        <ul className="pb-1 text-l">{informations.description}</ul>
 
-        <ul className="container-row align-center pb-1">
+        <ul className="continer-row align-center pb-1">
             <i className="material-icons mr-2 t-white">email</i>
             {informations.name}
         </ul>
@@ -32,7 +32,7 @@ const SocialMedia = ({icons}) => (
 function Contact({hidden}) {
 
     return (
-        <div className={["contact-container web", hidden ? "hide-content" : "show-content"].join(" ")}>
+        <div>
             <Content informations={contactInformations}/>
             <SocialMedia icons={contactIcon}/>
         </div>

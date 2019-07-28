@@ -64,8 +64,8 @@ export const MenuContent = ({item, isMobile}) => {
                 <div className="top-content">
                     <TopContent period={item.period} title={item.title} role={item.role} company={item.company}
                                 location={item.location}/>
-                    <div className="mb-1">{item.description}</div>
-                    <div>{item.mission}</div>
+                    <div className="text-justify mb-1">{item.description}</div>
+                    <div className="text-justify">{item.mission}</div>
                 </div>
                 <div>
                     <Divider light/>

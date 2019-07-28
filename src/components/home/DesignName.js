@@ -14,10 +14,10 @@ export function DesignName({label, active}) {
 
     return (
         <div className="container container-col content-center clickable">
-            <div className={["container-row content-center design-label text-l", getActiveClass('top-text')].join(' ')}>
+            <div className={["container-row content-center design-label text-l text-center", getActiveClass('top-text')].join(' ')}>
                 Engineer in computer science & management
             </div>
-            <div className={["container-row content-center design-label-glow color-tertiary barcode mt-3", getActiveClass()].join(' ')}>
+            <div className={["container-row content-center text-center design-label-glow color-tertiary barcode mt-3", getActiveClass()].join(' ')}>
                 {label}
             </div>
         </div>

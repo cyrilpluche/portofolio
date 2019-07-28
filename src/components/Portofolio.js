@@ -16,12 +16,12 @@ const Portofolio = ({isMobile}) => {
     }
 
     return (
-        <div className="container container-row">
+        <div className="container container-row scroll-hidden">
             <div className="grid-12-6">
                 <MenuScroll selectItem={handleSelectItem} items={items} activeItem={selectedItem}/>
             </div>
             {isMobile ? <MenuDialog open={open} setOpen={setOpen} item={selectedItem}/> : (
-                <div className="grid-12-6">
+                <div className="grid-12-6 scroll">
                     <MenuContent item={selectedItem} isMobile={false}/>
                 </div>
             )}

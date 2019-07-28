@@ -95,7 +95,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bg-blue {
-  flex-grow: 1;
   background-color: red;
 }
 
@@ -146,6 +145,10 @@ body::-webkit-scrollbar-thumb {
 
 .scroll-hidden {
   overflow: hidden;
+}
+
+.scroll-x-hidden {
+  overflow-x: hidden;
 }
 
 .scroll {

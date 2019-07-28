@@ -6,7 +6,7 @@ import {aboutmeDescription} from "../data/AboutMe";
 const Timeline = ({step}) => {
 
     return (
-        <div className="timeline-container">
+        <div className="timeline-container mb-2">
             <div className="timeline"/>
             <div className={["cursor", "step-" + step].join(" ")}>
                 <i className="material-icons cursor-icon">keyboard_arrow_left</i>
@@ -30,23 +30,23 @@ const TimelineContent = ({activeItem, setHover}) => {
      */
 
     return (
-        <div className="timeline-content-container">
-            <div className="container-row justify-between">
+        <div className="container-row justify-center">
+            <div className="container-timeline">
                 {lifeSteps.map((step, index) => (
                     <React.Fragment key={index}>
                         <div
-                        className={["container-col timeline-section", isActive(step) ? "timeline-section-active" : null].join(" ")}
-                        onMouseOver={() => setHover(step)}>
-                        <div className="text-m mb-1">{step.date}</div>
-                        <div className="timeline-detail container-col">
-                            {step.events.map((event, index) => (
-                                <React.Fragment key={index}>
-                                    <div>{event.title}</div>
-                                    <div className="t-grey-light mb-1">{event.description}</div>
-                                </React.Fragment>
-                            ))}
+                            className={["container-col timeline-section pb-1", isActive(step) ? "timeline-section-active" : null].join(" ")}
+                            onMouseOver={() => setHover(step)}>
+                            <div className="text-m mb-1">{step.date}</div>
+                            <div className="timeline-detail container-col">
+                                {step.events.map((event, index) => (
+                                    <React.Fragment key={index}>
+                                        <div>{event.title}</div>
+                                        <div className="t-grey-light mb-1">{event.description}</div>
+                                    </React.Fragment>
+                                ))}
+                            </div>
                         </div>
-                    </div>
                     </React.Fragment>
                 ))}
             </div>
@@ -61,7 +61,7 @@ const Skills = ({skills}) => {
     }
 
     return (
-        <div className="aboutme-skills container-col justify-between">
+        <div className="drawer-content pl-1">
             {skills.map((skill, index) => (
                 <div className="container-row justify-between" key={index}>
                     {skill.name}
@@ -74,10 +74,21 @@ const Skills = ({skills}) => {
     )
 }
 
+/*
+ {skills.map((skill, index) => (
+                <div className="container-row justify-between" key={index}>
+                    {skill.name}
+                    <div className="level-bar-container">
+                        <div className={["level-bar", skill.level].join(" ")}/>
+                    </div>
+                </div>
+            ))}
+ */
+
 const Hobbies = ({hobbies}) => {
 
     return (
-        <div className="aboutme-hobbies container-col justify-between">
+        <div className="drawer-content container-col justify-between">
             {hobbies.map((hobbie, index) => (
                 <div className="container-row align-center" key={index}>
                     <img className="mr-1" src={hobbie.icon} alt="hobbie icon"/>
@@ -90,7 +101,7 @@ const Hobbies = ({hobbies}) => {
     )
 }
 
-const AboutMe = ({hidden}) => {
+const AboutMe = ({isMobile}) => {
 
     const [openDrawer, setOpenDrawer] = useState(false)
     const [step, setStep] = useState(0)
@@ -105,22 +116,19 @@ const AboutMe = ({hidden}) => {
         setStep(lifeSteps.indexOf(item))
     }
 
-    console.log(activeItem)
-
     return (
-        <div className={["aboutme-container", hidden ? "hide-content" : "show-content"].join(" ")}>
-            <div className="aboutme-description">
-                <div className="text-l pb-2">{aboutmeDescription.title}</div>
-                <div className="aboutme-skills-container container-row justify-between align-end">
-                    <div className={["drawer", openDrawer ? "open-drawer" : null].join(" ")}>
-                        <Skills skills={aboutmeDescription.skills}/>
-                        <i className={["clickable drawer-icon material-icons", openDrawer ? "flip-drawer-icon" : null].join(" ")} onClick={onOpenDrawer}>arrow_forward_ios</i>
-                        <Hobbies hobbies={aboutmeDescription.hobbies}/>
-                    </div>
+        <div className="full-height container-col scroll-hidden">
+            <div className="scroll-x-hidden">
+                <div className="text-center text-l py-1 pb-2">{aboutmeDescription.title}</div>
+                <div className={["drawer mb-2", openDrawer ? "open-drawer" : null].join(" ")}>
+                    <Skills skills={aboutmeDescription.skills}/>
+                    <i className={["clickable drawer-icon material-icons", openDrawer ? "flip-drawer-icon" : null].join(" ")}
+                       onClick={onOpenDrawer}>arrow_forward_ios</i>
+                    <Hobbies hobbies={aboutmeDescription.hobbies}/>
                 </div>
+                <Timeline step={step}/>
+                <TimelineContent activeItem={activeItem} setHover={handleHover}/>
             </div>
-            <Timeline step={step}/>
-            <TimelineContent activeItem={activeItem} setHover={handleHover}/>
         </div>
     )
 }
@@ -128,15 +136,17 @@ const AboutMe = ({hidden}) => {
 export default AboutMe
 
 /*
-<div className={["aboutme-container", hidden ? "hide-content" : "show-content"].join(" ")}>
-            <div className="aboutme-description">
-                <div className="text-l pb-2">{aboutmeDescription.title}</div>
-                <div className="aboutme-skills-container container-row justify-between align-end">
+<div id="about-me-drawer" className="container-row justify-between align-end scroll-hidden">
+            <div className="text-center text-l py-1 pb-2">{aboutmeDescription.title}</div>
+
+                <div className={["drawer", openDrawer ? "open-drawer" : null].join(" ")}>
                     <Skills skills={aboutmeDescription.skills}/>
+                    <i className={["clickable drawer-icon material-icons", openDrawer ? "flip-drawer-icon" : null].join(" ")}
+                       onClick={onOpenDrawer}>arrow_forward_ios</i>
                     <Hobbies hobbies={aboutmeDescription.hobbies}/>
                 </div>
             </div>
-            <Timeline step={step}/>
-            <TimelineContent activeItem={activeItem} setHover={handleHover}/>
-        </div>
+            <div className="grid-50-100">
+                <div className="text-center text-l py-1 pb-2">{aboutmeDescription.title}</div>
+            </div>
  */

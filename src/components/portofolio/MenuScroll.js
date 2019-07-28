@@ -29,7 +29,7 @@ export const MenuScroll = ({items, selectItem, activeItem}) => {
         <div className="container container-col content-center scroll-hidden">
             <div id="menu-scroll" className="scroll">
             {items.map((item, index) => (
-                <div className="full-width mb-3" key={index}>
+                <div className="full-width mb-3 text-end" key={index}>
                     <Title label={item.title}/>
                     {item.items.map((itemChild, indexChild) => (
                         <Item label={itemChild.menuTitle} selectItem={() => selectItem(itemChild)} key={indexChild} active={isActive(itemChild)}/>
