@@ -90,6 +90,40 @@ const bali = {
     period: "01/06/18 - 12/08/18"
 }
 
+const cyhm = {
+    menuTitle: 'directory of medical professionals',
+    title: 'Can You Help Me',
+    company: 'Individual Client',
+    location: 'Montpellier, France',
+    description: "Our applicant is the director of an institute to help young disabled people. In his work, the manpower management is a task that requires him a lot of time. Search for compatible profiles in terms of experience that diploma is often long.",
+    mission: "Creation of a web application that would allow individuals, associations businesses, to use the services of professionals very specific specialties. Professionals could them on their side offer their services under the guise of self-entrepreneur status.",
+    keyWords: ['Web', 'Project Management', 'Conception', 'Modelisation'],
+    role: 'Front-end',
+    languages: [
+        "Meteor",
+        "MongoDB",
+        "Bootstrap"
+    ],
+    period: "04/18 - 06/18"
+}
+
+const camatau = {
+    menuTitle: 'White label we bapplication',
+    title: 'SingeBill Sport',
+    company: 'Camatau',
+    location: 'Montpellier, France',
+    description: "CAMATAU is a three years old startup, base in Montpellier, created by Mathieu Carbonel. Before creating this startup, he worked for many companies as the UEFA, THe Paul-Ricard motorsports and the Toulon rugby club. CAMATAU is born from Hellocom with the purpose of helping companies managing all the logistic of their event.",
+    mission: "In a team of two student, we built a white label web applications dedicated to sport tickets sales. This application is fully customizable (components, color and content) depending on data provided by the admin platform SingeBill.",
+    keyWords: ['Web', 'Project Management', 'Conception', 'Modelisation'],
+    role: 'Front-end',
+    languages: [
+        "Meteor",
+        "MongoDB",
+        "Bootstrap"
+    ],
+    period: "04/18 - 06/18"
+}
+
 export const experiences = [
     {
         title: 2019,
@@ -101,9 +135,11 @@ export const experiences = [
     {
         title: 2018,
         items: [
+            camatau,
             prello,
             amazon,
             bali,
+            cyhm
         ]
     }
 ]
@@ -115,6 +151,7 @@ export const languages = [
     "Node.js",
     "Redux",
     "Ionic",
+    "Meteor",
     "Redux",
     "Java",
     "Scala",
@@ -124,28 +161,3 @@ export const languages = [
     "PostgreSQL",
     "MongoDB"
 ]
-
-
-/*const fitnet = {
-    title: 'Cross-platform application Android & iOS',
-    coverUrl: coverBali,
-    description: {
-        short: 'Recreate from scratch the mobile application of the company with design and functional improvements',
-        full: 'Build a cross-platform smartphone application of the company using Ionic4 and Angular7. Fitnet manager is a large scale application dealing with administrative process of other company'
-    },
-    company: 'Fitnet Manager',
-    companyIcon: iconFitnet,
-    location: {
-        city: 'Montpellier',
-        country: 'France'
-    },
-    languages: [
-        'Ionic 4',
-        'Angular 7',
-        'Java 7'
-    ],
-    date: {
-        start: '18/02/2019',
-        end: '02/08/2019'
-    }
-}*/
