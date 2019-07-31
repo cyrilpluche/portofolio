@@ -3,13 +3,36 @@ import "./AboutMe.scss"
 import {lifeSteps} from "../data/AboutMe";
 import {aboutmeDescription} from "../data/AboutMe";
 
+const Informations = ({informations}) => {
+    return (
+        <div className="container-col text-m mb-2 pl-1">
+            <div className="container-row">
+                <i className="material-icons pr-1">account_box</i>
+                <div>{informations.name + ' ' + informations.surname}</div>
+            </div>
+            <div className="container-row ">
+                <i className="material-icons pr-1">flag</i>
+                <div>{informations.nationality}</div>
+            </div>
+            <div className="container-row ">
+                <i className="material-icons pr-1">grade</i>
+                <div>{informations.dateOfBirth}</div>
+            </div>
+            <div className="container-row ">
+                <i className="material-icons pr-1">my_location</i>
+                <div>{informations.placeOfBirth}</div>
+            </div>
+        </div>
+    )
+}
+
 const Timeline = ({step}) => {
 
     return (
         <div className="timeline-container mb-2">
             <div className="timeline"/>
             <div className={["cursor", "step-" + step].join(" ")}>
-                <i className="material-icons cursor-icon">keyboard_arrow_left</i>
+                <i className="material-icons pr-1 cursor-icon">keyboard_arrow_left</i>
             </div>
         </div>
     )
@@ -17,17 +40,9 @@ const Timeline = ({step}) => {
 
 const TimelineContent = ({activeItem, setHover}) => {
 
-    console.log(activeItem)
-
     const isActive = item => {
         return activeItem.date === item.date
     }
-
-    /*
-    {isActive(step) ? (
-                            <img className="timeline-cover" src={step.cover} alt="timeline cover"/>
-                        ) : null}
-     */
 
     return (
         <div className="container-row justify-center">
@@ -74,17 +89,6 @@ const Skills = ({skills}) => {
     )
 }
 
-/*
- {skills.map((skill, index) => (
-                <div className="container-row justify-between" key={index}>
-                    {skill.name}
-                    <div className="level-bar-container">
-                        <div className={["level-bar", skill.level].join(" ")}/>
-                    </div>
-                </div>
-            ))}
- */
-
 const Hobbies = ({hobbies}) => {
 
     return (
@@ -117,36 +121,19 @@ const AboutMe = ({isMobile}) => {
     }
 
     return (
-        <div className="full-height container-col scroll-hidden">
-            <div className="scroll-x-hidden">
-                <div className="text-center text-l py-1 pb-2">{aboutmeDescription.title}</div>
-                <div className={["drawer mb-2", openDrawer ? "open-drawer" : null].join(" ")}>
-                    <Skills skills={aboutmeDescription.skills}/>
-                    <i className={["clickable drawer-icon material-icons", openDrawer ? "flip-drawer-icon" : null].join(" ")}
-                       onClick={onOpenDrawer}>arrow_forward_ios</i>
-                    <Hobbies hobbies={aboutmeDescription.hobbies}/>
-                </div>
-                <Timeline step={step}/>
-                <TimelineContent activeItem={activeItem} setHover={handleHover}/>
+        <div className="full-height container-col scroll-x-hidden">
+            <Informations informations={aboutmeDescription}/>
+            <div className="text-center text-l py-1 pb-2">{aboutmeDescription.title}</div>
+            <div className={["drawer mb-2", openDrawer ? "open-drawer" : null].join(" ")}>
+                <Skills skills={aboutmeDescription.skills}/>
+                <i className={["clickable drawer-icon material-icons pr-1", openDrawer ? "flip-drawer-icon" : null].join(" ")}
+                   onClick={onOpenDrawer}>arrow_forward_ios</i>
+                <Hobbies hobbies={aboutmeDescription.hobbies}/>
             </div>
+            <Timeline step={step}/>
+            <TimelineContent activeItem={activeItem} setHover={handleHover}/>
         </div>
     )
 }
 
 export default AboutMe
-
-/*
-<div id="about-me-drawer" className="container-row justify-between align-end scroll-hidden">
-            <div className="text-center text-l py-1 pb-2">{aboutmeDescription.title}</div>
-
-                <div className={["drawer", openDrawer ? "open-drawer" : null].join(" ")}>
-                    <Skills skills={aboutmeDescription.skills}/>
-                    <i className={["clickable drawer-icon material-icons", openDrawer ? "flip-drawer-icon" : null].join(" ")}
-                       onClick={onOpenDrawer}>arrow_forward_ios</i>
-                    <Hobbies hobbies={aboutmeDescription.hobbies}/>
-                </div>
-            </div>
-            <div className="grid-50-100">
-                <div className="text-center text-l py-1 pb-2">{aboutmeDescription.title}</div>
-            </div>
- */

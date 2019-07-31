@@ -117,8 +117,8 @@ const camatau = {
     keyWords: ['Web', 'Project Management', 'Conception', 'Modelisation'],
     role: 'Front-end',
     languages: [
-        "Meteor",
-        "MongoDB",
+        "Angular2+",
+        "Redux",
         "Bootstrap"
     ],
     period: "04/18 - 06/18"
@@ -152,7 +152,6 @@ export const languages = [
     "Redux",
     "Ionic",
     "Meteor",
-    "Redux",
     "Java",
     "Scala",
     "Bootstrap",

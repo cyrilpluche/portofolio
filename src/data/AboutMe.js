@@ -7,6 +7,12 @@ import polytech from '../public/cover_polytech.jpg'
 import dfco from '../public/cover_dfco.jpg'
 
 export const aboutmeDescription = {
+    name: 'Cyril',
+    surname: 'Pluche',
+    nationality: 'French',
+    dateOfBirth: '2 July 1996',
+    placeOfBirth: 'Cherbourg, Normandie',
+
     title: "Currently finishing my end-of-studies internship, I'm looking for an opportunity abroad to challenge myself and discover a new culture.",
     languages: [
         {country: "fr", level: "Mother tongue"},
