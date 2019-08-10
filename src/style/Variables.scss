@@ -1,11 +1,11 @@
-$space: 10px;
+$space: 100px;
 $primary: #000000;
 $primary-contrast: #FFFFFF;
 $secondary: #FFFFFF;
 $secondary-contrast: #000000;
 $tertiary: rgb(255, 218, 28);
 
-$light: #b4b4b4;
+$light: #bcbcbc;
 
 $time-1: 1s;
 $time-15: 1.5s;
@@ -41,5 +41,9 @@ $time-3: 3s;
 }
 
 .text-m {
-  font-size: 1.2em;
+  font-size: 15px;
+}
+
+.t-bold {
+  font-weight: bold;
 }

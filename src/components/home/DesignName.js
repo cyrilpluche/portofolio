@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import "./DesignName.scss"
+import cover from '../../public/cover_home.png'
 
 export function DesignName({label, active}) {
 
@@ -13,7 +14,7 @@ export function DesignName({label, active}) {
     )
 
     return (
-        <div className="container container-col content-center clickable">
+        <div className="container container-col content-center clickable scroll-hidden">
             <div className={["container-row content-center design-label text-l text-center", getActiveClass('top-text')].join(' ')}>
                 Engineer in computer science & management
             </div>

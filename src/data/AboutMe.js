@@ -6,6 +6,11 @@ import montpellier from '../public/cover_montpellier.jpg'
 import polytech from '../public/cover_polytech.jpg'
 import dfco from '../public/cover_dfco.jpg'
 
+import soundcloud from '../public/icon_soundcloud_dark.png'
+import facebook from '../public/icon_facebook.png'
+import youtube from '../public/icon_youtube.png'
+import cover_music from '../public/cover_music.png'
+
 export const aboutmeDescription = {
     name: 'Cyril',
     surname: 'Pluche',
@@ -13,7 +18,13 @@ export const aboutmeDescription = {
     dateOfBirth: '2 July 1996',
     placeOfBirth: 'Cherbourg, Normandie',
 
-    title: "Currently finishing my end-of-studies internship, I'm looking for an opportunity abroad to challenge myself and discover a new culture.",
+    title: "Cyril - 23 years old",
+    description: [
+        "I am a young graduate in Computer Science & Management from the engineering school Polytech Montpellier FRANCE. During my cursus, I had the opportunity to work on various web projects " +
+    "with individual and professional clients. These experiences have helped me to shape my professional project and have strengthened my technical and human skills.",
+    "Having an interest in art, I love being able to express myself through my work by paying particular attention to small details and by always creating modern and pleasant views. " +
+    "Being also a sportsman, I love new challenges and always give the best of myself in order to help and advance the team as well as possible."
+        ],
     languages: [
         {country: "fr", level: "Mother tongue"},
         {country: "en", level: "TOIC - 895/990"},
@@ -92,3 +103,20 @@ export const lifeSteps = [
         ]
     },
 ]
+
+// V2 =================
+
+export const MeMusic = {
+    title: "Music Composer",
+    cover: cover_music,
+    content:[
+        "Passionate about music since I was yound, I learned piano on my own and then, at 15, I started to compose electronic music on " +
+        "softwares such as Fruity Loops Studio and Ableton Live. I am still regularly sharing new compositions on Soundcloud.",
+        "I was able to put this passion at the service of the student life of my school by taking over the DJ club in charge of hosting the various events for 3 years."
+    ],
+    links: [
+        {icon: soundcloud, url: 'https://soundcloud.com/dearpluche/hypercrise', alt: 'soundcloud icon'},
+        {icon: facebook, url: 'https://www.facebook.com/dearpluche', alt: 'facebook icon'},
+        {icon: youtube, url: 'https://www.youtube.com/watch?v=o5WRv_GJ4zc', alt: 'youtube icon'},
+    ]
+}

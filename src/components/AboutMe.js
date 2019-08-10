@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import "./AboutMe.scss"
+import Card from "./library/card/Card"
 import {lifeSteps} from "../data/AboutMe";
 import {aboutmeDescription} from "../data/AboutMe";
+import {MeMusic} from "../data/AboutMe";
 
 const Informations = ({informations}) => {
     return (
@@ -107,31 +109,13 @@ const Hobbies = ({hobbies}) => {
 
 const AboutMe = ({isMobile}) => {
 
-    const [openDrawer, setOpenDrawer] = useState(false)
-    const [step, setStep] = useState(0)
-    const [activeItem, setActiveItem] = useState(lifeSteps[0])
-
-    const onOpenDrawer = () => {
-        setOpenDrawer(!openDrawer)
-    }
-
-    const handleHover = item => {
-        setActiveItem(item)
-        setStep(lifeSteps.indexOf(item))
-    }
-
     return (
-        <div className="full-height container-col scroll-x-hidden">
-            <Informations informations={aboutmeDescription}/>
-            <div className="text-center text-l py-1 pb-2">{aboutmeDescription.title}</div>
-            <div className={["drawer mb-2", openDrawer ? "open-drawer" : null].join(" ")}>
-                <Skills skills={aboutmeDescription.skills}/>
-                <i className={["clickable drawer-icon material-icons pr-1", openDrawer ? "flip-drawer-icon" : null].join(" ")}
-                   onClick={onOpenDrawer}>arrow_forward_ios</i>
-                <Hobbies hobbies={aboutmeDescription.hobbies}/>
+        <div className="full-height container-col container align-center scroll-x-hidden">
+            <img className="me-cover-bl" src={MeMusic.cover} alt="music cover"/>
+            <div className="mb-2">
+                <Card title={aboutmeDescription.title} content={aboutmeDescription.description}/>
             </div>
-            <Timeline step={step}/>
-            <TimelineContent activeItem={activeItem} setHover={handleHover}/>
+            <Card title={MeMusic.title} content={MeMusic.content} links={MeMusic.links}/>
         </div>
     )
 }
