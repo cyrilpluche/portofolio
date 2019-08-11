@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Item = ({label, selectItem, active}) => {
 
     return (
         <div
-            className={["container-row justify-end clickable menu-item text-l color-light my-1", active ? "menu-item-active" : null].join(" ")}
+            className={["container-row justify-end clickable menu-item text-l my-1", active ? "menu-item-active" : null].join(" ")}
             onMouseOver={selectItem}
         >
             {label}
@@ -19,20 +19,20 @@ const Title = ({label}) => {
     )
 }
 
-export const MenuScroll = ({items, selectItem, activeItem}) => {
+export const MenuScroll = ({items, onClick, activeItem}) => {
 
     const isActive = item => {
         return activeItem && item === activeItem
     }
 
     return (
-        <div className="container container-col content-center scroll-hidden">
+        <div className="container container-col content-center">
             <div id="menu-scroll" className="scroll">
             {items.map((item, index) => (
                 <div className="full-width mb-3 text-end" key={index}>
                     <Title label={item.title}/>
                     {item.items.map((itemChild, indexChild) => (
-                        <Item label={itemChild.menuTitle} selectItem={() => selectItem(itemChild)} key={indexChild} active={isActive(itemChild)}/>
+                        <Item label={itemChild.menuTitle} selectItem={() => onClick(itemChild)} key={indexChild} active={isActive(itemChild)}/>
                     ))}
                 </div>
             ))}

@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import "./AboutMe.scss"
-import Card from "./library/card/Card"
-import {lifeSteps} from "../data/AboutMe";
-import {aboutmeDescription} from "../data/AboutMe";
-import {MeMusic} from "../data/AboutMe";
+import React from 'react'
+import "./style.scss"
+import Card from "../library/card/Card"
+import {lifeSteps} from "../../data/AboutMe";
+import {aboutmeDescription} from "../../data/AboutMe";
+import {MeMusic} from "../../data/AboutMe";
 
 const Informations = ({informations}) => {
     return (
@@ -107,11 +107,10 @@ const Hobbies = ({hobbies}) => {
     )
 }
 
-const AboutMe = ({isMobile}) => {
+const AboutPage = ({isMobile}) => {
 
     return (
-        <div className="full-height container-col container align-center scroll-x-hidden">
-            <img className="me-cover-bl" src={MeMusic.cover} alt="music cover"/>
+        <div className="page-container nav-space container-col align-center scroll-x-hidden">
             <div className="mb-2">
                 <Card title={aboutmeDescription.title} content={aboutmeDescription.description}/>
             </div>
@@ -120,4 +119,4 @@ const AboutMe = ({isMobile}) => {
     )
 }
 
-export default AboutMe
+export default AboutPage

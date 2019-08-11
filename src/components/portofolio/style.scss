@@ -4,18 +4,30 @@
   display: none;
 }
 
+.portfolio-container {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+}
+
+.testasse {
+  background-color: red;
+  height: 1000px;
+}
+
 // ========= MenuScroll ========
 #menu-scroll {
   height: 100%;
 }
 
 .menu-item {
+  color: $light;
   padding-right: 15px;
-  border-right: 2px solid white;
+  border-right: 2px solid transparent;
   transition: border-right $time-1 ease, color $time-1 ease;
 }
 .menu-item-active {
-  color: #161616;
+  color: $secondary;
   border-right: 2px solid rgb(255, 218, 28);
 }
 
