@@ -34,6 +34,7 @@
 
 #navbar-dialog {
   position: absolute;
+  opacity: 0;
   z-index: 20;
   margin: 0;
   height: 100vh;
@@ -41,6 +42,12 @@
   display: flex;
   flex-direction: column;
   background-color: $primary;
+
+  transition: opacity .3s ease;
+}
+
+.navbar-dialog-fade {
+  opacity: 1 !important;
 }
 
 .navbar-dialog-content {

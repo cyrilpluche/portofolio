@@ -31,24 +31,49 @@ const NavLinks = ({links, activeLink, navigate}) => {
     )
 }
 
-const NavMobile = ({links, activeLink, navigate}) => {
+const NavMobile = ({history, links, activeLink, navigate}) => {
     const [open, setOpen] = useState(false);
+    const [visible, setVisible] = useState(false);
+
+    history.listen(location => {
+        console.log('location moved')
+        setVisible(false)
+        setTimeout(() => {
+            console.log('closing the portal')
+            setOpen(false)
+        }, 400)
+    })
 
     const handleNavigate = link => {
+        console.log('go')
         navigate(link)
-        setOpen(false)
+        console.log('go sent')
     }
 
+    const handleOpen = value => {
+        if (value) {
+            setOpen(value)
+            setTimeout(() => {
+                setVisible(value)
+            }, 50)
+        } else {
+            setVisible(value)
+            setTimeout(() => {
+                setOpen(value)
+            }, 400)
+        }
+
+    }
 
     return (
         <React.Fragment>
         <div className="navbar-container">
-            <i onClick={() => setOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
+            <i onClick={() => handleOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
         </div>
             {open ? (
-                <div id="navbar-dialog">
+                <div id="navbar-dialog" className={visible ? "navbar-dialog-fade" : ""}>
                     <div className="container-row-reverse">
-                        <i onClick={() => setOpen(false)} className="navbar-icon material-icons text-xxl p-1">clear</i>
+                        <i onClick={() => handleOpen(false)} className="navbar-icon material-icons text-xxl p-1">clear</i>
                     </div>
                     <div className="navbar-dialog-content">
                         <NavLinks links={links} activeLink={activeLink} navigate={handleNavigate}/>
@@ -71,7 +96,7 @@ export const Navbar = ({history, links, navigate, isMobile}) => {
     return (
         <React.Fragment>
             {isMobile ? (
-                <NavMobile links={links} activeLink={activeLink} navigate={navigate}/>
+                <NavMobile history={history} links={links} activeLink={activeLink} navigate={navigate}/>
             ) : (
                 <div className="navbar-container">
                     <NavLinks links={links} activeLink={activeLink} navigate={navigate}/>
