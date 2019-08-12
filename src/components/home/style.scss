@@ -1,28 +1,35 @@
 @import "../../style/Variables";
 
 .home-cover {
-  position: absolute;
+  position: relative;
   min-height: 100%;
-  width: auto;
+  min-width: 100%;
   z-index: 0;
 }
 
-.design-label {
-  position: relative;
-  z-index: 1;
+.home-title {
   text-transform: uppercase;
-  letter-spacing: 0;
-  opacity: 0;
+  letter-spacing: 10px;
+  font-size: 25px;
+  color: $secondary;
   transition: letter-spacing $time-3 ease, opacity $time-15 ease, color $time-15 ease;
 }
+
+.home-title:hover {
+  letter-spacing: 12px;
+}
+
+
+
+
+
+
 
 .design-label-active {
   letter-spacing: 10px;
   opacity: 1;
 }
-.design-label-active:hover {
-  letter-spacing: 12px;
-}
+
 
 .design-label-glow {
   position: relative;

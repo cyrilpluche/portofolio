@@ -9,12 +9,12 @@ function TopContent({title, role, company, location, period}) {
         <div className="container-row justify-between pb-2">
             <div className="container-col">
                 <div className="card-title">{title.toUpperCase()}</div>
-                <div>{role.toUpperCase()}</div>
-                <div>{period}</div>
+                <div className="title-2">{role}</div>
+                <div className="title-caption">{period}</div>
             </div>
             <div className="container container-col align-end">
-                <div>{company}</div>
-                <div>{location}</div>
+                <div className="title-2">{company}</div>
+                <div className="title-caption">{location}</div>
             </div>
         </div>
     )
@@ -37,7 +37,7 @@ const Languages = ({selectedLanguages}) => {
             <Title3 text="Technologies"/>
             <li className="container-row">
                 {selectedLanguages.map((l, index) => (
-                    <ul className="p-0 my-0 mr-1" key={index}>{l.toUpperCase()}</ul>
+                    <ul className="p-0 my-0 mr-1 color-primary-contrast" key={index}>{l.toUpperCase()}</ul>
                 ))}
             </li>
         </React.Fragment>
@@ -48,9 +48,9 @@ const KeyWords = ({words}) => {
     return (
         <React.Fragment>
             <Title3 text="Key words"/>
-            <li className="container-row">
+            <li className="container-row mb-2">
                 {words.map((word, index) => (
-                    <ul className="p-0 my-0 mr-1" key={index}>{word.toUpperCase()}</ul>
+                    <ul className="p-0 my-0 mr-1 color-primary-contrast" key={index}>{word.toUpperCase()}</ul>
                 ))}
             </li>
         </React.Fragment>
@@ -60,8 +60,8 @@ const KeyWords = ({words}) => {
 export const MenuContent = ({item, isMobile}) => {
 
     return (
-        <div className="container container-row content-center">
-            <div id="menu-content" className="container-col">
+        <div className="container container col content-center">
+            <div id="menu-content" className="scroll">
                 <TopContent period={item.period} title={item.title} role={item.role} company={item.company}
                             location={item.location}/>
                 <div className="card-content">{item.description}</div>

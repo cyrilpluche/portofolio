@@ -3,7 +3,6 @@ import "./Card.scss"
 import PropTypes from 'prop-types';
 
 const Card = ({title, content, links}) => {
-    console.log(links)
     return (
         <div className="card">
             {title ? <div className="card-title">{title.toUpperCase()}</div> : null}

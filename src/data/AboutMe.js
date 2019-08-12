@@ -6,7 +6,7 @@ import montpellier from '../public/cover_montpellier.jpg'
 import polytech from '../public/cover_polytech.jpg'
 import dfco from '../public/cover_dfco.jpg'
 
-import soundcloud from '../public/icon_soundcloud_dark.png'
+import soundcloud from '../public/icon_soundcloud.png'
 import facebook from '../public/icon_facebook.png'
 import youtube from '../public/icon_youtube.png'
 import cover_music from '../public/cover_music.png'
@@ -110,7 +110,7 @@ export const MeMusic = {
     title: "Music Composer",
     cover: cover_music,
     content:[
-        "Passionate about music since I was yound, I learned piano on my own and then, at 15, I started to compose electronic music on " +
+        "Passionate about music since I was young, I learned piano on my own and then, at 15, I started to compose electronic music on " +
         "softwares such as Fruity Loops Studio and Ableton Live. I am still regularly sharing new compositions on Soundcloud.",
         "I was able to put this passion at the service of the student life of my school by taking over the DJ club in charge of hosting the various events for 3 years."
     ],

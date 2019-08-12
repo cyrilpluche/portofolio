@@ -1,88 +1,89 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import "./Navbar.scss"
-import {makeStyles} from '@material-ui/core/styles';
-import Dialog from '@material-ui/core/Dialog';
+import "./style.scss"
 
-export const Link = ({label, active}) => {
+const Link = ({link, activeLink}) => {
+    const isActive = () => {
+        return activeLink ? link.url === activeLink : false
+    }
+
     return (
-        <div className={["clickable link", active ? "link-active" : null].join(' ')}>
-            {label.toUpperCase()}
+        <div className={["link", isActive() ? "link-active" : null].join(' ')}>
+            {link.label.toUpperCase()}
         </div>
     )
 }
 
 Link.propTypes = {
-    label: PropTypes.string.isRequired,
-    active: PropTypes.bool,
+    link: PropTypes.object.isRequired,
+    activeLink: PropTypes.string,
 };
 
-const NavbarDialog = ({open, setOpen, selectLink, activeLink, links, getActive}) => {
+const NavLinks = ({links, activeLink, navigate}) => {
     return (
-            <div id="navbar-dialog" className={activeLink.background}>
-                <div className="container-row-reverse">
-                    <i onClick={() => setOpen(false)} className="material-icons color-light text-xxl p-1">
-                        clear
-                    </i>
+        <React.Fragment>
+            {links.map((link, index) => (
+                <div onClick={() => navigate(link)} key={index}>
+                    <Link link={link} activeLink={activeLink}/>
                 </div>
-                <div
-                    className={["page-container container-col justify-center text-center", activeLink.navColor].join(' ')}>
-                    {links.map((p, index) => (
-                        <div onClick={() => selectLink(p)} key={index}>
-                            <Link label={p.label} active={getActive(p)}/>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            ))}
+        </React.Fragment>
     )
 }
 
-export const Navbar = ({isMobile, navigate, links, activeLink, history}) => {
-
+const NavMobile = ({links, activeLink, navigate}) => {
     const [open, setOpen] = useState(false);
 
-    const handleClick = link => {
+    const handleNavigate = link => {
         navigate(link)
-        history.push('/' + link.url)
-
-        if (isMobile) setOpen(false)
-    }
-
-    const getActive = (link) => {
-        return activeLink.url === link.url
+        setOpen(false)
     }
 
 
     return (
-        <div className={["container-row-reverse", activeLink.navColor].join(' ')}>
+        <React.Fragment>
+        <div className="navbar-container">
+            <i onClick={() => setOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
+        </div>
+            {open ? (
+                <div id="navbar-dialog">
+                    <div className="container-row-reverse">
+                        <i onClick={() => setOpen(false)} className="navbar-icon material-icons text-xxl p-1">clear</i>
+                    </div>
+                    <div className="navbar-dialog-content">
+                        <NavLinks links={links} activeLink={activeLink} navigate={handleNavigate}/>
+                    </div>
+                </div>
+            ) : null}
+        </React.Fragment>
+    )
+}
+
+export const Navbar = ({history, links, navigate, isMobile}) => {
+
+    const [activeLink, setActiveLink] = useState(history.location.pathname.substring(1, history.location.pathname.length));
+
+    history.listen(location => {
+        let url = location.pathname
+        setActiveLink(url.substring(1, url.length))
+    })
+
+    return (
+        <React.Fragment>
             {isMobile ? (
-                <React.Fragment>
-                    <i onClick={() => setOpen(true)} className="material-icons text-xxl p-1">
-                        menu
-                    </i>
-                    {open ? (
-                        <NavbarDialog open={open} selectLink={handleClick} activeLink={activeLink} links={links}
-                                      setOpen={setOpen}
-                                      getActive={getActive}/>
-                    ) : null}
-                </React.Fragment>
+                <NavMobile links={links} activeLink={activeLink} navigate={navigate}/>
             ) : (
-                <div className={["container-row justify-end", activeLink.navColor].join(' ')}>
-                    {links.map((p, index) => (
-                        <div onClick={() => handleClick(p)} key={index}>
-                            <Link label={p.label} active={getActive(p)}/>
-                        </div>
-                    ))}
+                <div className="navbar-container">
+                    <NavLinks links={links} activeLink={activeLink} navigate={navigate}/>
                 </div>
             )}
-        </div>
-
+        </React.Fragment>
     );
 }
 
 Navbar.propTypes = {
-    navigate: PropTypes.func.isRequired,
+    history: PropTypes.object,
+    navigate: PropTypes.func,
     links: PropTypes.array,
-    activeLink: PropTypes.object,
-    history: PropTypes.object.isRequired,
+    isMobile: PropTypes.bool,
 };

@@ -1,0 +1,57 @@
+@import "../../style/Variables";
+
+.navbar-container {
+  z-index: 10;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.link {
+  font-family: 'Electrolize', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: $light;
+  padding-bottom: 7px;
+  margin: 15px;
+  transition: color .5s ease;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.link:hover {
+  color: white;
+}
+
+.link-active {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+#navbar-dialog {
+  position: absolute;
+  z-index: 20;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: $primary;
+}
+
+.navbar-dialog-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.navbar-icon {
+  color: white;
+}
