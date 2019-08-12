@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import "./style.scss"
+import {SocialMedia} from "../contact/Contact";
 
 const Link = ({link, activeLink}) => {
     const isActive = () => {
@@ -31,7 +32,7 @@ const NavLinks = ({links, activeLink, navigate}) => {
     )
 }
 
-const NavMobile = ({links, activeLink, navigate}) => {
+const NavMobile = ({isMobile, links, activeLink, navigate}) => {
     const [open, setOpen] = useState(false);
 
     const handleNavigate = link => {
@@ -42,9 +43,12 @@ const NavMobile = ({links, activeLink, navigate}) => {
 
     return (
         <React.Fragment>
-        <div className="navbar-container">
-            <i onClick={() => setOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
-        </div>
+            <div className="navbar-container justify-between">
+                <div className="pl-1">
+                    <SocialMedia isMobile={isMobile}/>
+                </div>
+                <i onClick={() => setOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
+            </div>
             {open ? (
                 <div id="navbar-dialog">
                     <div className="container-row-reverse">
@@ -71,9 +75,9 @@ export const Navbar = ({history, links, navigate, isMobile}) => {
     return (
         <React.Fragment>
             {isMobile ? (
-                <NavMobile links={links} activeLink={activeLink} navigate={navigate}/>
+                <NavMobile isMobile={isMobile} links={links} activeLink={activeLink} navigate={navigate}/>
             ) : (
-                <div className="navbar-container">
+                <div className="navbar-container justify-end">
                     <NavLinks links={links} activeLink={activeLink} navigate={navigate}/>
                 </div>
             )}

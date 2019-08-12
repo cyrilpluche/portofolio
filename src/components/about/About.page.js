@@ -110,12 +110,15 @@ const Hobbies = ({hobbies}) => {
 const AboutPage = ({isMobile}) => {
 
     return (
-        <div className="page-container nav-space container-col align-center scroll-x-hidden">
-            <div className="mb-2">
-                <Card title={aboutmeDescription.title} content={aboutmeDescription.description}/>
+        <React.Fragment>
+            <div className="nav-space"/>
+            <div className="page-container container-col align-center scroll-x-hidden">
+                <div className="mb-2">
+                    <Card title={aboutmeDescription.title} content={aboutmeDescription.description}/>
+                </div>
+                <Card title={MeMusic.title} content={MeMusic.content} links={MeMusic.links}/>
             </div>
-            <Card title={MeMusic.title} content={MeMusic.content} links={MeMusic.links}/>
-        </div>
+        </React.Fragment>
     )
 }
 

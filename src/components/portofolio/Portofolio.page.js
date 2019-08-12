@@ -16,12 +16,14 @@ const PortofolioPage = ({isMobile}) => {
 
     return (
         <React.Fragment>
-            <div className="page-container-fixed nav-space container-row">
-                <div className="grid-12-6">
+            <div className="page-container-fixed container-row">
+                <div className="grid-12-6 nav-space">
                     <MenuScroll onClick={handleSelectItem} items={experiences} activeItem={selectedItem}/>
                 </div>
-                {isMobile ? <MenuDialog open={open} setOpen={setOpen} item={selectedItem}/> : (
-                    <div className="grid-12-6">
+                {isMobile ? (
+                    <MenuDialog open={open} setOpen={setOpen} item={selectedItem}/>
+                ): (
+                    <div className="grid-12-6 nav-space">
                         <MenuContent item={selectedItem} isMobile={false}/>
                     </div>
                 )}

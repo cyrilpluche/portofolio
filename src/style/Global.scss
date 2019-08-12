@@ -131,6 +131,14 @@ body::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 
+.container-fill {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+}
+
 .background-container {
   position: absolute;
   height: 100%;
