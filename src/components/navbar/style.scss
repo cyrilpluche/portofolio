@@ -8,33 +8,33 @@
   width: 100%;
   height: 70px;
   flex-direction: row;
-  justify-content: flex-end;
 }
 
 .link {
-  font-family: 'Electrolize', sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-  color: $light;
-  padding-bottom: 7px;
+  font-family: 'Harmattan', sans-serif;
+  // font-weight: bold;
+  font-size: 20px;
+  color: white;
+  opacity: .6;
+  padding-bottom: 4px;
   margin: 15px;
-  transition: color .5s ease;
+  transition: opacity .5s ease;
   cursor: pointer;
   border-bottom: 1px solid transparent;
 }
 
 .link:hover {
-  color: white;
+  opacity: 1;
 }
 
 .link-active {
   color: white;
+  opacity: 1;
   border-bottom: 1px solid white;
 }
 
 #navbar-dialog {
   position: absolute;
-  opacity: 0;
   z-index: 20;
   margin: 0;
   height: 100vh;
@@ -42,7 +42,6 @@
   display: flex;
   flex-direction: column;
   background-color: $primary;
-
   transition: opacity .3s ease;
 }
 

@@ -3,6 +3,7 @@ import Divider from '@material-ui/core/Divider';
 import {languages} from "../../data/Portofolio";
 import Dialog from '@material-ui/core/Dialog';
 import Title3 from "../library/text/Text";
+import "./style.scss"
 
 function TopContent({title, role, company, location, period}) {
     return (
@@ -60,7 +61,7 @@ const KeyWords = ({words}) => {
 export const MenuContent = ({item, isMobile}) => {
 
     return (
-        <div className="container container col content-center">
+        <div className="container container-col content-center">
             <div id="menu-content" className="scroll">
                 <TopContent period={item.period} title={item.title} role={item.role} company={item.company}
                             location={item.location}/>
@@ -80,10 +81,30 @@ export const MenuContent = ({item, isMobile}) => {
 export const MenuDialog = ({open, setOpen, item}) => {
 
     return (
-        <Dialog onClose={() => setOpen(false)} aria-labelledby="simple-dialog-title" open={open}>
-            <div className="p-1">
-                <MenuContent item={item} isMobile={true}/>
+        open ? (
+            <div id="portfolio-dialog">
+                <div className="container-fill">
+                    <div className="container-row-reverse align-center nav-space">
+                        <i onClick={() => setOpen(false)}
+                           className="portfolio-icon material-icons text-xxl p-1">clear</i>
+                    </div>
+                    <div className="portfolio-dialog-content">
+                        <MenuContent item={item} isMobile={true}/>
+                    </div>
+                </div>
             </div>
-        </Dialog>
+        ) : null
     )
 }
+
+/*
+<div className="portfolio-dialog-content">
+                    <div className="container-row-reverse align-center">
+                        <i onClick={() => setOpen(false)}
+                           className="portfolio-icon material-icons text-xxl p-1">clear</i>
+                    </div>
+                    <div className="navbar-dialog-content">
+                        <MenuContent item={item} isMobile={true}/>
+                    </div>
+                </div>
+ */

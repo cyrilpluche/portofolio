@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import "./style.scss"
+import {SocialMedia} from "../contact/Contact";
 
 const Link = ({link, activeLink}) => {
     const isActive = () => {
@@ -31,7 +32,7 @@ const NavLinks = ({links, activeLink, navigate}) => {
     )
 }
 
-const NavMobile = ({history, links, activeLink, navigate}) => {
+const NavMobile = ({isMobile, history, links, activeLink, navigate}) => {
     const [open, setOpen] = useState(false);
     const [visible, setVisible] = useState(false);
 
@@ -45,9 +46,7 @@ const NavMobile = ({history, links, activeLink, navigate}) => {
     })
 
     const handleNavigate = link => {
-        console.log('go')
         navigate(link)
-        console.log('go sent')
     }
 
     const handleOpen = value => {
@@ -62,14 +61,16 @@ const NavMobile = ({history, links, activeLink, navigate}) => {
                 setOpen(value)
             }, 400)
         }
-
     }
 
     return (
         <React.Fragment>
-        <div className="navbar-container">
-            <i onClick={() => handleOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
-        </div>
+            <div className="navbar-container justify-between">
+                <div className="pl-1">
+                    <SocialMedia isMobile={isMobile}/>
+                </div>
+                <i onClick={() => setOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
+            </div>
             {open ? (
                 <div id="navbar-dialog" className={visible ? "navbar-dialog-fade" : ""}>
                     <div className="container-row-reverse">
@@ -96,9 +97,9 @@ export const Navbar = ({history, links, navigate, isMobile}) => {
     return (
         <React.Fragment>
             {isMobile ? (
-                <NavMobile history={history} links={links} activeLink={activeLink} navigate={navigate}/>
+                <NavMobile isMobile={isMobile} history={history} links={links} activeLink={activeLink} navigate={navigate}/>
             ) : (
-                <div className="navbar-container">
+                <div className="navbar-container justify-end">
                     <NavLinks links={links} activeLink={activeLink} navigate={navigate}/>
                 </div>
             )}

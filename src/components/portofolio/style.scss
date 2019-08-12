@@ -47,3 +47,25 @@
   background-color: black;
   color: white;
 }
+
+#portfolio-dialog {
+  position: absolute;
+  z-index: 20;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $primary;
+}
+
+.portfolio-dialog-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-icon {
+  color: white;
+}
