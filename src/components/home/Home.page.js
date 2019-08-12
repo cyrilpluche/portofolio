@@ -19,8 +19,8 @@ export function HomePage({label, active}) {
                 <img className="home-cover" src={cover} alt="home cover"/>
             </div>
             <div className="page-container-fixed container-col content-center">
-                <div className="home-title">
-                    Engineer in computer science & management
+                <div className="home-title barcode">
+                    Cyril Pluche
                 </div>
             </div>
         </React.Fragment>

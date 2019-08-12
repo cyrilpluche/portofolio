@@ -1,11 +1,11 @@
 @import "./Variables";
 
-$space-0: 0;
-$space-1: $space * 0.2;
-$space-2: $space * 0.4;
-$space-3: $space * 0.6;
-$space-4: $space * 0.8;
-$space-5: $space;
+$space-0: 0 !important;;
+$space-1: $space * 0.2 !important;;
+$space-2: $space * 0.4 !important;;
+$space-3: $space * 0.6 !important;;
+$space-4: $space * 0.8 !important;;
+$space-5: $space !important;;
 
 .nav-space {
   padding-top: 70px;

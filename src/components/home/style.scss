@@ -9,14 +9,13 @@
 
 .home-title {
   text-transform: uppercase;
-  letter-spacing: 10px;
-  font-size: 25px;
+  font-size: 50px;
   color: $secondary;
   transition: letter-spacing $time-3 ease, opacity $time-15 ease, color $time-15 ease;
 }
 
 .home-title:hover {
-  letter-spacing: 12px;
+  // letter-spacing: 12px;
 }
 
 

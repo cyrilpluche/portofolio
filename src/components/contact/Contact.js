@@ -1,40 +1,46 @@
-import React, {useState} from 'react'
-import "./contact/Contact.scss"
-import {contactInformations, contactIcon} from "../data/Contact";
+import React from 'react'
+import "./style.scss"
+import {contactInformations, contactIcon} from "../../data/Contact";
 
-const Content = ({informations}) => (
-    <li className="container-col text-m pr-1">
-        <ul className="pb-1 text-l">{informations.description}</ul>
-
-        <ul className="continer-row align-center pb-1">
-            <i className="material-icons mr-2 t-white">email</i>
-            {informations.name}
-        </ul>
-        <ul className="container-row align-center">
-            <i className="material-icons mr-2 t-grey-light">email</i>
-            {informations.email}
-        </ul>
-        <ul className="container-row align-center">
-            <i className="material-icons mr-2 t-grey-light">phone_android</i>
-            {informations.tel}
-        </ul>
-    </li>
-)
-
-const SocialMedia = ({icons}) => (
-    <div className="social-content t-white">
-        {icons.map((icon, index) => (
-            <a className="social-icon" href={icon.redirect} target="_blank" rel="noopener noreferrer" key={index}><img src={icon.url} alt={icon.alt}/></a>
-        ))}
+const Content = ({isMobile, informations}) => (
+    <div className="container-col mr-2">
+        <div className="title-2 mb-2">{informations.name}</div>
+        <div className="title-2">{informations.email}</div>
+        <div className="title-2 mb-1">{informations.tel}</div>
+        {isMobile ? <SocialMedia isMobile={isMobile} /> : null}
     </div>
 )
 
-function Contact({hidden}) {
+/*
+        <ul className="pb-1 text-l">{informations.description}</ul>
+
+ */
+
+const SocialMedia = ({isMobile}) => {
+    const icons = contactIcon
+    return (
+        <React.Fragment>
+            <div className={isMobile ? "container-row" : "container-row-reverse"}>
+                {icons.map((icon, index) => (
+                    <a className="social-icon" href={icon.redirect} target="_blank" rel="noopener noreferrer"
+                       key={index}><img src={icon.url} alt={icon.alt}/></a>
+                ))}
+            </div>
+        </React.Fragment>
+    )
+}
+
+function Contact({isMobile}) {
 
     return (
-        <div>
-            <Content informations={contactInformations}/>
-            <SocialMedia icons={contactIcon}/>
+        <div className="page-container-fixed container-col content-center">
+            <div id="contact-container">
+                <div className="container-col justify-between">
+                    <div className="title-3 mt-0 pb-2">{contactInformations.description}</div>
+                    {!isMobile ? <SocialMedia isMobile={isMobile} /> : null}
+                </div>
+                <Content isMobile={isMobile} informations={contactInformations}/>
+            </div>
         </div>
     )
 }

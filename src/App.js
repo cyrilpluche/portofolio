@@ -10,7 +10,7 @@ import './style/Grid.scss'
 import {Background} from "./components/background/Background"
 import {Navbar} from "./components/navbar/Navbar"
 import {HomePage} from "./components/home/Home.page"
-import Contact from './components/Contact'
+import Contact from './components/contact/Contact'
 import PortofolioPage from './components/portofolio/Portofolio.page'
 import AboutPage from './components/about/About.page'
 import {pages} from "./Enum";
@@ -56,6 +56,7 @@ function App() {
                     <Route exact path="/home" component={() => <HomePage label={"cyril pluche"} />}/>
                     <Route exact path="/about" component={AboutPage}/>
                     <Route exact path="/portfolio" component={() => <PortofolioPage isMobile={isMobile}/>}/>
+                    <Route exact path="/contact" component={() => <Contact isMobile={isMobile}/>}/>
                     <Route path='*' render={() => <Redirect to="/home" />}/>
                 </Switch>
             </Router>
