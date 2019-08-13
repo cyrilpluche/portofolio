@@ -52,13 +52,16 @@ const NavMobile = ({isMobile, history, links, activeLink, navigate}) => {
     const handleOpen = value => {
         if (value) {
             setOpen(value)
+
             setTimeout(() => {
                 setVisible(value)
             }, 50)
         } else {
             setVisible(value)
+
             setTimeout(() => {
                 setOpen(value)
+
             }, 400)
         }
     }
@@ -69,12 +72,13 @@ const NavMobile = ({isMobile, history, links, activeLink, navigate}) => {
                 <div className="pl-1">
                     <SocialMedia isMobile={isMobile}/>
                 </div>
-                <i onClick={() => setOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
+                <i onClick={() => handleOpen(true)} className="navbar-icon material-icons text-xxl p-1">menu</i>
             </div>
             {open ? (
                 <div id="navbar-dialog" className={visible ? "navbar-dialog-fade" : ""}>
                     <div className="container-row-reverse">
-                        <i onClick={() => handleOpen(false)} className="navbar-icon material-icons text-xxl p-1">clear</i>
+                        <i onClick={() => handleOpen(false)}
+                           className="navbar-icon material-icons text-xxl p-1">clear</i>
                     </div>
                     <div className="navbar-dialog-content">
                         <NavLinks links={links} activeLink={activeLink} navigate={handleNavigate}/>
@@ -97,10 +101,16 @@ export const Navbar = ({history, links, navigate, isMobile}) => {
     return (
         <React.Fragment>
             {isMobile ? (
-                <NavMobile isMobile={isMobile} history={history} links={links} activeLink={activeLink} navigate={navigate}/>
+                <NavMobile isMobile={isMobile} history={history} links={links} activeLink={activeLink}
+                           navigate={navigate}/>
             ) : (
-                <div className="navbar-container justify-end">
-                    <NavLinks links={links} activeLink={activeLink} navigate={navigate}/>
+                <div className="navbar-container justify-between">
+                    <div className="pl-1">
+                        <SocialMedia isMobile={isMobile}/>
+                    </div>
+                    <div className="container-row">
+                        <NavLinks links={links} activeLink={activeLink} navigate={navigate}/>
+                    </div>
                 </div>
             )}
         </React.Fragment>

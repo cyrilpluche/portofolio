@@ -36,7 +36,6 @@ function Contact({isMobile}) {
             <div id="contact-container">
                 <div className="container-col justify-between">
                     <div className="title-2 mt-0 pb-2">{contactInformations.description}</div>
-                    {!isMobile ? <SocialMedia isMobile={isMobile} /> : null}
                 </div>
                 <Content isMobile={isMobile} informations={contactInformations}/>
             </div>

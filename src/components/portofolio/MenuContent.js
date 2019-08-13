@@ -78,13 +78,13 @@ export const MenuContent = ({item, isMobile}) => {
 <KeyContent words={item.keyWords}/>
  */
 
-export const MenuDialog = ({open, setOpen, item}) => {
+export const MenuDialog = ({visible, open, setOpen, item}) => {
 
     return (
         open ? (
-            <div id="portfolio-dialog">
-                <div className="container-fill">
-                    <div className="container-row-reverse align-center nav-space">
+            <div id="portfolio-dialog" className={visible ? "portfolio-dialog-fade" : ""}>
+                <div className="container-relative">
+                    <div className="container-row-reverse align-center">
                         <i onClick={() => setOpen(false)}
                            className="portfolio-icon material-icons text-xxl p-1">clear</i>
                     </div>
