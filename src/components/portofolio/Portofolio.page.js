@@ -36,27 +36,23 @@ const PortofolioPage = ({isMobile}) => {
     return (
         <React.Fragment>
             <div className="nav-space"/>
-            <div className="page-container container-row scroll-hidden">
-                <div className="grid-12-6 scroll">
-                    <MenuScroll onClick={handleSelectItem} items={experiences} activeItem={selectedItem}/>
-                </div>
-                {isMobile ? (
-                    <MenuDialog visible={visible} open={open} setOpen={handleOpen} item={selectedItem}/>
-                ): (
+            {!isMobile ? (
+                <div className="page-container container-row scroll-hidden">
+                    <div className="grid-12-6 scroll">
+                        <MenuScroll onClick={handleSelectItem} items={experiences} activeItem={selectedItem}/>
+                    </div>
                     <div className="grid-12-6 scroll">
                         <MenuContent item={selectedItem} isMobile={false}/>
                     </div>
-                )}
-            </div>
+                </div>
+            ) : (
+                <div className="page-container container-col align-center scroll-x-hidden">
+                    <MenuScroll onClick={handleSelectItem} items={experiences} activeItem={selectedItem}/>
+                    <MenuDialog visible={visible} open={open} setOpen={handleOpen} item={selectedItem}/>
+                </div>
+            )}
         </React.Fragment>
     )
 }
 
 export default PortofolioPage
-/*
-{isMobile ? <MenuDialog open={open} setOpen={setOpen} item={selectedItem}/> : (
-                <div className="grid-12-6 scroll">
-                    <MenuContent item={selectedItem} isMobile={false}/>
-                </div>
-            )}
- */
