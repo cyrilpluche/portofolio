@@ -83,14 +83,12 @@ export const MenuDialog = ({visible, open, setOpen, item}) => {
     return (
         open ? (
             <div id="portfolio-dialog" className={visible ? "portfolio-dialog-fade" : ""}>
-                <div className="container-relative">
-                    <div className="container-row-reverse align-center">
-                        <i onClick={() => setOpen(false)}
-                           className="portfolio-icon material-icons text-xxl p-1">clear</i>
-                    </div>
-                    <div className="portfolio-dialog-content">
-                        <MenuContent item={item} isMobile={true}/>
-                    </div>
+                <div className="container-row-reverse align-center">
+                    <i onClick={() => setOpen(false)}
+                       className="portfolio-icon material-icons text-xxl p-1">clear</i>
+                </div>
+                <div className="portfolio-dialog-content">
+                    <MenuContent item={item} isMobile={true}/>
                 </div>
             </div>
         ) : null

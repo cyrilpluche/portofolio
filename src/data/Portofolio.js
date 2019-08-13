@@ -91,7 +91,7 @@ const bali = {
 }
 
 const cyhm = {
-    menuTitle: 'directory of medical professionals',
+    menuTitle: 'Directory of medical professionals',
     title: 'Can You Help Me',
     company: 'Individual Client',
     location: 'Montpellier, France',
